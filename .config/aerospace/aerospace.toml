@@ -102,6 +102,7 @@ automatically-unhide-macos-hidden-apps = true
     alt-c = 'workspace C'
     alt-v = 'workspace V'
     alt-b = 'workspace B'
+    alt-a = 'workspace A'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-z = 'move-node-to-workspace Z'
@@ -109,6 +110,7 @@ automatically-unhide-macos-hidden-apps = true
     alt-shift-c = 'move-node-to-workspace C'
     alt-shift-v = 'move-node-to-workspace V'
     alt-shift-b = 'move-node-to-workspace B'
+    alt-shift-a = 'move-node-to-workspace A'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -132,8 +134,24 @@ automatically-unhide-macos-hidden-apps = true
     alt-shift-h = ['join-with left', 'mode main']
     alt-shift-j = ['join-with down', 'mode main']
     alt-shift-k = ['join-with up', 'mode main']
-    alt-shift-l = ['join-with right', 'mode main']
 
-    down = 'volume down'
-    up = 'volume up'
-    shift-down = ['volume set 0', 'mode main']
+
+[[on-window-detected]]
+if.app-id = "com.openai.chat"
+run = "move-node-to-workspace A"
+
+[[on-window-detected]]
+if.app-id = "ru.yandex.desktop.music"
+run = "move-node-to-workspace Z"
+
+[[on-window-detected]]
+if.app-id = "com.tdesktop.Telegram"
+run = "move-node-to-workspace X"
+
+[[on-window-detected]]
+if.app-id = "com.figma.Desktop"
+run = "move-node-to-workspace V"
+
+[[on-window-detected]]
+if.app-id = "ru.yandex.desktop.yandex-browser"
+run = "move-node-to-workspace B"

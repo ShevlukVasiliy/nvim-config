@@ -49,13 +49,8 @@ eval "$(rbenv init -)"
 export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
 export PATH="$JAVA_HOME/bin:$PATH"
 
-
 export PATH="/Library/Frameworks/Python.framework/Versions/3.12/bin:$PATH"
 export PATH="$HOME/Library/Python/3.12/bin:$PATH"
-
-
-export OLLAMA_API_BASE="http://127.0.0.1:11434"
-export OLLAMA_CONTEXT_LENGTH=16384
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
@@ -65,20 +60,23 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # aliases
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ls="eza --color=always --long --icons=always --no-time"
+alias ls="eza --color=always --long --no-time"
 alias pwd="pwd | pbcopy && pwd"
 alias rmrf="to_trash"
 alias glg="git log --oneline --graph --decorate --all"
 
-alias aqc="aider --model ollama/qwen2.5-coder:7b"
-alias aq="aider --model ollama/qwen3:4b"
-
-alias qc="unset HTTP_PROXY HTTPS_PROXY http_proxy https_proxy ALL_PROXY && export NO_PROXY=127.0.0.1,localhost,::1 && aqc"
-alias q="unset HTTP_PROXY HTTPS_PROXY http_proxy https_proxy ALL_PROXY && export NO_PROXY=127.0.0.1,localhost,::1 && aq"
-
-alias oqc="ollama run qwen2.5-coder:7b"
-alias oq="ollama run qwen3:4b"
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
 
 zstyle ':completion:*' menu select
+
+# The next line updates PATH for CLI.
+if [ -f '/Users/vasiliy/yandex-cloud/path.bash.inc' ]; then source '/Users/vasiliy/yandex-cloud/path.bash.inc'; fi
+
+# The next line enables shell command completion for yc.
+if [ -f '/Users/vasiliy/yandex-cloud/completion.zsh.inc' ]; then source '/Users/vasiliy/yandex-cloud/completion.zsh.inc'; fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/vasiliy/.lmstudio/bin"
+# End of LM Studio CLI section
+

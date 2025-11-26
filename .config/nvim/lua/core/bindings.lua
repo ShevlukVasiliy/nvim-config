@@ -1,13 +1,16 @@
 -- reload config
 vim.keymap.set('n', '<leader>sr', ':source<CR>')
 
+-- moves
+vim.keymap.set('n', ';', ':norm $<CR>', { silent = true })
+vim.keymap.set('v', ';', ':norm $<CR>', { silent = true })
 vim.keymap.set('n', 'р', ':norm h<CR>', { silent = true })
 vim.keymap.set('n', '[', ':norm ~<CR>', { silent = true })
 vim.keymap.set('n', 'о', ':norm j<CR>', { silent = true })
 vim.keymap.set('n', 'л', ':norm k<CR>', { silent = true })
 vim.keymap.set('n', 'д', ':norm l<CR>', { silent = true })
-vim.keymap.set('n', 'щ', ':norm o<CR>', { silent = true })
-vim.keymap.set('n', 'Щ', ':norm O<CR>', { silent = true })
+vim.keymap.set('n', 'щ', ':norm o<CR>:norm i<CR>', { silent = true })
+vim.keymap.set('n', 'Щ', ':norm O<CR>:norm i<CR>', { silent = true })
 vim.keymap.set('n', '<C-з>', ':norm <C-p><CR>', { silent = true })
 vim.keymap.set('n', '<C-З>', ':norm <C-P><CR>', { silent = true })
 vim.keymap.set('v', 'р', '<Left>')
@@ -15,6 +18,7 @@ vim.keymap.set('v', 'о', '<Down>')
 vim.keymap.set('v', 'л', '<Up>')
 vim.keymap.set('v', 'д', '<Right>')
 
+-- edit
 vim.keymap.set('n', 'ф', 'a')
 vim.keymap.set('n', 'Ф', 'A')
 vim.keymap.set('n', 'ш', 'i')

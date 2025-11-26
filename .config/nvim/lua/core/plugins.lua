@@ -17,4 +17,17 @@ vim.pack.add({
 	{ src = "https://github.com/David-Kunz/gen.nvim" },
 	{ src = "https://github.com/tpope/vim-fugitive" },
 	{ src = "https://github.com/catppuccin/nvim" },
+	{ src = "https://github.com/CopilotC-Nvim/CopilotChat.nvim" },
+	{ src = "https://github.com/neovim/nvim-lspconfig" },
+	{ src = "https://github.com/mason-org/mason.nvim" },
+	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
+	{ src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
+	{ src = "https://github.com/folke/tokyonight.nvim" },
 })
+
+require('mason').setup()
+require('mason-lspconfig').setup({})
+require('mason-tool-installer').setup({
+	ensure_installed = { "lua_ls", "ts_ls", 'eslint_d', 'prettier' }
+})
+vim.cmd [[colorscheme tokyonight-night]]
